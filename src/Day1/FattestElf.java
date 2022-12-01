@@ -1,6 +1,7 @@
 package Day1;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FattestElf {
@@ -13,6 +14,7 @@ public class FattestElf {
 	static int FattestElfLocation;
 	static int SecondFattestElfLocation = 0;
 	static int ThirdFattestElfLocation = 0;
+	static int[] elfCalories= new int[300];
 	public static void main(String[] args) {
 		try {
 			File ElvishCalories = new File("src/Day1/DayOneInput.txt");
@@ -21,6 +23,7 @@ public class FattestElf {
 				String currentSnack = s.nextLine();
 				if(currentSnack.length() == 0) {
 					elfCount++;
+					elfCalories[elfCount] = currentElf;
 					if(currentElf > FattestElf) {
 						caughtElf++;
 						switch(caughtElf) {
@@ -57,6 +60,13 @@ public class FattestElf {
 		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		Arrays.sort(elfCalories);
+		int FattestElf = elfCalories[299];
+		int SecondFattestElf = elfCalories[298];
+		int ThirdFattestElf = elfCalories[297];
+		int threeBiggestTotal = FattestElf + SecondFattestElf + ThirdFattestElf;
+		System.out.println("the elf with the most calories has " + FattestElf);
+		System.out.println("the biggest three elves have " + threeBiggestTotal + " combined calories");
 		int finalValue = FattestElf + SecondFattestElf + ThirdFattestElf;
 		System.out.println("Patrol Elf: All the elves have been checked which means we have finally come to the conclusion that elf number " + FattestElfLocation + " had the most snacks clocking in at " + FattestElf + " calories worth of snacks!");
 		System.out.println("            For our little elf bodies thats like a lifetimes worth of food!");
