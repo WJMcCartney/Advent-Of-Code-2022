@@ -15,7 +15,6 @@ public class CheatinElves {
 			while(s.hasNextLine()) {
 				String currentValue = s.nextLine();
 				currentValue = currentValue.replaceAll("\\s", "");
-				System.out.println(currentValue);
 				if(currentValue.equals("AX")) {
 					valueCount[0]++;
 				} else if(currentValue.equals("BX")) {
@@ -37,15 +36,15 @@ public class CheatinElves {
 				}
 				
 			}
-			finalCount += 4 * valueCount[0];
-			finalCount += 1 * valueCount[1];
-			finalCount += 7 * valueCount[2];
-			finalCount += 8 * valueCount[3];
-			finalCount += 5 * valueCount[4];
-			finalCount += 2 * valueCount[5];
-			finalCount += 3 * valueCount[6];
-			finalCount += 9 * valueCount[7];
-			finalCount += 3 * valueCount[8];
+			finalCount += (4 * valueCount[0]);
+			finalCount += (1 * valueCount[1]);
+			finalCount += (7 * valueCount[2]);
+			finalCount += (8 * valueCount[3]);
+			finalCount += (5 * valueCount[4]);
+			finalCount += (2 * valueCount[5]);
+			finalCount += (3 * valueCount[6]);
+			finalCount += (9 * valueCount[7]);
+			finalCount += (6 * valueCount[8]);
 			System.out.println(finalCount);
 		}
 		catch(FileNotFoundException e) {
