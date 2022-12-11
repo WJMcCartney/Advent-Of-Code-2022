@@ -18,15 +18,10 @@ public class IDEngulfing {
 
 			while (s.hasNextLine()) {
 				String currentIDPair = s.nextLine();
-				System.out.println(currentIDPair);
 					ID1s = Integer.parseInt(currentIDPair.substring(0, currentIDPair.indexOf('-')));
-					System.out.println(ID1s);
 					ID1e = Integer.parseInt(currentIDPair.substring(currentIDPair.indexOf('-')+1, currentIDPair.indexOf(',')));
-					System.out.println(ID1e);
 					ID2s = Integer.parseInt(currentIDPair.substring(currentIDPair.indexOf(',')+1, currentIDPair.indexOf('-', currentIDPair.length()/2)));
-					System.out.println(ID2s);
 					ID2e = Integer.parseInt(currentIDPair.substring(currentIDPair.indexOf('-', currentIDPair.length()/2)+1, currentIDPair.length()));
-					System.out.println(ID2e);
 					if(ID1s <= ID2s && ID1e >= ID2e) {
 						count++;
 					} else if(ID2s <= ID1s && ID2e >= ID1e) {
